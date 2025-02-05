@@ -182,7 +182,25 @@ In production, all PHP files are encrypted/obfuscated (with the `.enc` extension
    Modify your `php.ini` file in PHPDesktop to use `opcache`. For example:
 
 <pre>
+  ; Load OPcache as a Zend Extension
   zend_extension=php_opcache.dll
+  ; Opcache settings
+  [opcache]
+  ; Enables OPcache (1 to enable, 0 to disable)
+  opcache.enable=1
+  ; If you want OPcache to also be enabled in CLI (useful for testing), change to 1
+  opcache.enable_cli=0
+  ; Shared memory size allocated to OPcache in megabytes (adjust according to your needs)
+  opcache.memory_consumption=128
+  ; Buffer size for interned strings
+  opcache.interned_strings_buffer=8
+  ; Maximum number of files that OPcache can cache.
+  ; This value must be high enough to cover all your scripts.
+  opcache.max_accelerated_files=4000
+  ; Interval in seconds to check if a file has changed. In production, a higher value may improve performance.
+  opcache.revalidate_freq=60
+  ; Enables fast shutdown of OPcache
+  opcache.fast_shutdown=1
 </pre>
 
 4. **Run PHPDesktop:**  
