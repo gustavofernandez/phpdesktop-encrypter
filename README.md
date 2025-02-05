@@ -178,7 +178,14 @@ In production, all PHP files are encrypted/obfuscated (with the `.enc` extension
        "hide_files": []
    },
 
-3. **Run PHPDesktop:**  
+3. **PHPDesktop Settings:**  
+   Modify your `php.ini` file in PHPDesktop to use `opcache`. For example:
+
+<pre>
+  zend_extension=php_opcache.dll
+</pre>
+
+4. **Run PHPDesktop:**  
 Launch phpdesktop-chrome.exe (or your chosen PHPDesktop executable). The router (router.php) will decrypt and evaluate the encrypted PHP files at runtime.
 
 # PHPDesktop Settings
