@@ -154,7 +154,7 @@ In production, all PHP files are encrypted/obfuscated (with the `.enc` extension
 2. **Run `compile.bat`:**  
    Open a Command Prompt and run the provided `compile.bat` script from the root of the `phpdesktop-encrypter` folder. This script will:
    - Encrypt and obfuscate all PHP files (both pages and components) from `input_docs` and generate a map (`map.json`).
-   - Copy the base router file (`base_router.php`) to `output_docs`.
+   - Copy the base router file (`generate_router.php`) to `output_docs`.
    - Generate `router.php` using the embedded map.
    - Compile `phpdesktop-encrypter.c` into `phpdesktop-encrypter.exe`.
 
